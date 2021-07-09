@@ -5,45 +5,28 @@ spl_autoload_register(function($class_name){include 'classes/' . $class_name .'.
 
 
 
-$pipi = new Character('Pipi'.' '.'Langstrump');
+$pipi = new Warrior('Pipi'.' '.'Langstrump');
 $yoda= new Mage('Yoda');
 
 
 var_dump($pipi, $yoda);
 
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
-echo '<br>';
-echo $yoda->batonAttack($pipi);
 
 
 //variable pipi llama a la función sword, y el cible es leia
 
-// while ($pipi->getLifePoints()> 0 && $yoda->getLifePoints()>0) {
-//   echo $pipi->sword($yoda);
-//   echo '<br>';
-//   $status = "$pipi->name a gagnée!";
-//   if ($yoda->getLifePoints()>0) {
-//     echo $yoda->sword($pipi);
-//     echo '<br>';
-//     $status= "$yoda->name a gagnée!";
-//   }
-//   echo'<br>';
-// }
-// echo $status;
+while ($pipi->isAlive()> 0 && $yoda->isAlive()>0) {
+  echo $pipi->sword($yoda);
+  echo '<br>';
+  $status = "$pipi->name a gagnée!";
+  if ($yoda->isAlive()>0) {
+    echo $yoda->fireball($pipi);
+    echo '<br>';
+    $status= "$yoda->name a gagnée!";
+  }
+  echo'<br>';
+}
+echo $status;
 
 
 
